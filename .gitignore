@@ -1,2 +1,7 @@
-/assignment_2_2024-main/
-/.venv/
+/build/
+/devel/
+/.catkin_workspace
+/.idea
+/src/*
+!/src/first_part/
+/src/second_part/
