@@ -1,42 +1,42 @@
 #! /usr/bin/env python3
 
-import roslib
-roslib.load_manifest('first_part')
 import rospy
-import actionlib
+from geometry_msgs.msg import Pose, PoseStamped, Point
 from actionlib import SimpleActionClient, TerminalState
-from assignment_2_2024.msg import PlanningAction, PlanningActionGoal, PlanningActionFeedback, PlanningActionResult
+from assignment_2_2024.msg import PlanningAction, PlanningGoal, PlanningFeedback
 
-from MessageRobotPosVel.msg import MessageRobotPosVel
+toggle: int = 0
+stat: str = ""
+
+
+def feedback_callback(feedback: PlanningFeedback) -> None:
+    global stat
+    stat = feedback.stat
 
 
 def main() -> None:
-    rospy.init_node('target_client')
+    global toggle, stat
+    rospy.init_node("target_client")
 
-    # Create an action client
-    client: SimpleActionClient = SimpleActionClient('/reaching_goal', PlanningAction)
+    client: SimpleActionClient = SimpleActionClient("reaching_goal", PlanningAction)
     client.wait_for_server()
 
-    pub = rospy.Publisher('/target_status', queue_size=10)
-
-    fdbk = rospy.wait_for_message('/reaching_goal/feedback', PlanningActionFeedback)
+    pose: Pose = Pose()
+    goal: PlanningGoal = PlanningGoal()
 
     while not rospy.is_shutdown():
-        if fdbk.feedback.stat != "Target reached!" and fdbk.feedback.stat != "Target cancelled!":
+        if toggle:
             user_input = input("Do you want to cancel the target? [y/n] ")
-            if user_input.lower() == 'y':
+            if user_input.lower() == 'y' and stat != "Target reached!" and stat != "Target cancelled!":
                 client.cancel_goal()
-            continue
+                toggle = 0
+        else:
+            pose.position.x = float(input("Enter the x coordinate of the target: "))
+            pose.position.y = float(input("Enter the y coordinate of the target: "))
 
-        target_x = float(input("Enter the x coordinate of the target: "))
-        target_y = float(input("Enter the y coordinate of the target: "))
-        orientation = float(input("Enter the orientation of the target: "))
-
-        target = PlanningActionGoal()
-        target.goal.target_pose.pose.position.x = target_x
-        target.goal.target_pose.pose.position.y = target_y
-        target.goal.target_pose.pose.orientation.z = orientation
-        client.send_goal(target)
+            goal.target_pose.pose = pose
+            client.send_goal(goal, feedback_cb=feedback_callback)
+            toggle = 1
 
 
 if __name__ == "__main__":
