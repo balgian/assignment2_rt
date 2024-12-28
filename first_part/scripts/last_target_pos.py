@@ -40,10 +40,10 @@ def main():
 #
 # def main():
 #     rospy.init_node('last_target_pos_server')
-#     sub: rospy.Subscriber = rospy.Subscriber('reaching_goal/goal', PlanningActionGoal, copy_target_callback)
-#     serv: rospy.Service = rospy.Service('target_pos', TargetPos, pos_target)
+#     rospy.Subscriber('reaching_goal/goal', PlanningActionGoal, copy_target_callback)
+#     rospy.Service('target_pos', TargetPos, pos_target)
 #     rospy.spin()
-#
-#
-# if __name__ == "__main__":
-#     main()
+
+
+if __name__ == "__main__":
+    main()
