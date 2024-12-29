@@ -1,4 +1,0 @@
-<launch>
-    <node name="target_client" pkg="first_part" type="target_client.py" output="screen" />
-    <node name="last_target_pos" pkg="first_part" type="last_target_pos.py" />
-</launch>
