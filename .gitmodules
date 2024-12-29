@@ -1,0 +1,9 @@
+[submodule "assignment2_rt"]
+	path = assignment2_rt
+	url = https://github.com/CarmineD8/assignment_2_2024.git
+[submodule "robot_urdf"]
+	path = robot_urdf
+	url = https://github.com/CarmineD8/robot_urdf.git
+[submodule "assignment_2_2024"]
+	path = assignment_2_2024
+	url = https://github.com/CarmineD8/assignment_2_2024.git
