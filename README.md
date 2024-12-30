@@ -13,7 +13,7 @@ This node implements an _action client_, allowing the user to set a target via t
 It is a service node that, when called, returns the coordinates of the last target sent by the user.
 For this node, there are implemented two methods to retrieve the most recent target with a schematic representation of the communication between the nodes of both methods:
 
-1. By getting the `des_pos_x` and `des_pos_y` parameters defined in the launch file `assignment1.launch`; ![first_part_parameters]https://i.imgur.com/8sdvycK.png)
+1. By getting the `des_pos_x` and `des_pos_y` parameters defined in the launch file `assignment1.launch`; ![first_part_parameters](https://i.imgur.com/8sdvycK.png)
 2. By subscribing to the topic `reaching_goal/goal`. ![first_part_topic](https://i.imgur.com/BQm7v9c.png)
 
 ### How to Use
