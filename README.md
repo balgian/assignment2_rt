@@ -23,7 +23,6 @@ For this node, there are implemented two methods to retrieve the most recent tar
 
 ### Dependencies:
 
-|                 |                        |                   |
 |:---------------:|:----------------------:|:-----------------:|
 |     `rospy`     |  `assignment_2_2024`   |  `geometry_msgs`  |
 |   `actionlib`   |  `message_generation`  |    `std_msgs`     |
