@@ -8,6 +8,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath('../'))
 sys.path.insert(0, os.path.abspath('../first_part'))
+sys.path.insert(0, os.path.abspath('../first_part/scripts'))
 show_authors = True
 
 # -- Project information -----------------------------------------------------
@@ -28,7 +29,17 @@ extensions = [
 ]
 
 # Mock ROS modules to avoid import errors
-autodoc_mock_imports = ['rospy', 'std_msgs', 'geometry_msgs', 'sensor_msgs', 'first_part.srv']
+autodoc_mock_imports = [
+    'rospy',
+    'std_msgs',
+    'geometry_msgs',
+    'sensor_msgs',
+    'first_part.srv',
+    'actionlib',
+    'first_part.msg',
+    'nav_msgs',
+    'assignment_2_2024.msg'
+]
 
 templates_path = ['_templates']
 exclude_patterns = []

@@ -3,12 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-first_part documentation
-========================
+Documentation of the first part of the Assignment 2 of research Track 1
+=======================================================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   modules
 
 Indices
 *******
@@ -17,18 +19,6 @@ Indices
 * :ref:`modindex`
 * :ref:`search`
 
-Assignment 2 documentation
-**************************
-
-This is the documentation for ROS Assignment 2.
-
-Module `last_target_pos`
-************************
-
-.. automodule:: first_part.scripts.last_target_pos
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 
 
