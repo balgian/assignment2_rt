@@ -1,5 +1,7 @@
 # Research Track 1: Assignment 2
 
+Consult the [documentation](https://balgian.github.io/assignment2_rt/) for more details on the code.
+
 ## Package Overview
 
 This package consists of two ROS nodes: `target_client` and `last_target_pos` developed with ROS Noetic. These nodes communicate together with the package [**assignment_2_2024**](https://github.com/CarmineD8/assignment_2_2024.git) to control a robot simulation using **_Gazebo_** and to view the simulated robot model, sensor information with **_RViz_**.
