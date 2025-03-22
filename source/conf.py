@@ -53,3 +53,13 @@ master_doc = 'index'
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+html_show_sourcelink = False
+
+html_context = {
+    "display_github": True,
+    "github_user": "balgian",
+    "github_repo": "assignment2_rt",
+    "github_version": "ROS-Noetic",
+    "conf_py_path": "/source/"
+}
